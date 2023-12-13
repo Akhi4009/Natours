@@ -1,0 +1,19 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: boder-box;
+}
+
+body {
+    font-family: "lato"sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
