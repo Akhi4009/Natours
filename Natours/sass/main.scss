@@ -1,64 +1,64 @@
-// Colors
+    // Colors
 
-$color-primary:#55c57a;
-$color-primary-light:#7ed56f;
-$color-primary-dark:#28b485;
-$color-white: #fff;
-$color-dark-gray:#777;
+    $color-primary:#55c57a;
+    $color-primary-light:#7ed56f;
+    $color-primary-dark:#28b485;
+    $color-white: #fff;
+    $color-dark-gray:#777;
+    $color-black:#000;
 
-*,
-*::after,
-*::before {
-    margin:0;
-    padding: 0;
-    box-sizing: inherit;
-}
+    *,
+    *::after,
+    *::before {
+        margin:0;
+        padding: 0;
+        box-sizing: inherit;
+    }
 
-html {
-    font-size: 62.5%;
-}
+    html {
+        font-size: 62.5%;
+    }
 
-body {
-    font-family: "lato"sans-serif;
-    font-weight: 400;
-    line-height: 1.7;
-    color:$color-dark-gray;
-    padding: 3rem;
-    box-sizing: border-box;
-    
-}
+    body {
+        font-family: "lato"sans-serif;
+        font-weight: 400;
+        line-height: 1.7;
+        color:$color-dark-gray;
+        padding: 3rem;
+        box-sizing: border-box;
+        
+    }
 
-.header {
-    height:95vh;
-    background-image:
-    linear-gradient(to right bottom,
-    rgba($color-primary-light, 0.8),
-    rgba($color-primary-dark, 0.8)),
-    url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;
-    position: relative;
-    clip-path:polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    
-}
+    .header {
+        height:95vh;
+        background-image:
+        linear-gradient(to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        clip-path:polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        
+        &__logo-box{
+            position: absolute;
+        top: 4rem;
+        left:4rem;
+     }
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left:4rem;
-}
+     &__logo{
+        height: 3.5rem;
+    }
 
-.header__logo {
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 
-    height: 3.5rem;
-}
-
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
 }
 
 .heading-primary{
@@ -66,29 +66,30 @@ body {
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
+    &&--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    
+
+    }
+    
+    &&--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;
+        animation: moveInRight 1s ease-out;
+    }
 }
 
 
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
 
-    /* animation-delay: 2s;
-    animation-iteration-count: 3; */
-}
-
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    animation: moveInRight 1s ease-out;
-}
 @keyframes moveInLeft{
     0% {
         opacity: 0;
@@ -136,8 +137,10 @@ body {
     }
 }
 
-.btn:link,
-.btn:visited {
+.btn{
+
+&:link,
+&:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -149,22 +152,31 @@ body {
 
 }
 
-.btn:hover {
+&:hover {
     transform: translateY(-.3rem);
-    box-shadow: 0 10px 20px rgba(0, 0, 0,0.2);
+    box-shadow: 0 10px 20px rgba($color-black,.2);
+
+    &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
 }
 
-.btn:active {
+&:active {
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
 }
 
-.btn--white {
+&--white {
     background-color: $color-white;
     color: $color-dark-gray;
+
+    &::after{
+        background-color: $color-white;
+    }
 }
 
-.btn::after {
+&::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -176,17 +188,8 @@ body {
     z-index: -1;
     transition: all .4s;
     }
-
-.btn--white::after{
-    background-color: $color-white;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn--animated {
+&--animated {
     animation: moveInButton 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
+}
 }
