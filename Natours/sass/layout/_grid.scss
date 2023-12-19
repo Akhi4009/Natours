@@ -12,7 +12,8 @@
     }
 
 @include respond(tab-port) {
-     max-width: 50rem
+     max-width: 50rem;
+     padding: 2rem;
 }
 
 //use clear for float

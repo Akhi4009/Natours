@@ -1,8 +1,10 @@
 .section-about {
     background-color: $color-gray-light-1;
-    padding: 25rem 0;
+    padding: 25rem 0 20rem 0;
     margin-top: -20vh;
-    
+
+ 
+   
 }
 
 .section-feature{
@@ -21,6 +23,8 @@ transform: skewy(-7deg);
 
     transform: skewy(7deg);
 }
+
+
 }
 
 .section-tours {
@@ -28,6 +32,10 @@ transform: skewy(-7deg);
     background-color: $color-gray-light-1;
     padding: 25rem 0 10rem 0;
     margin-top: -12rem;
+
+    @include respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
 }
 
  .section-stories {
@@ -35,11 +43,15 @@ transform: skewy(-7deg);
      position: relative;
     }
 
+   
+
 .section-book  {
     padding: 15rem 0;
-    margin: 15rem 0;
+    
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-   
+    @include respond(tab-port){
+        padding: 10rem 0;
+       } 
 }
 
 .book {

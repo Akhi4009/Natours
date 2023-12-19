@@ -16,6 +16,12 @@
         z-index: 2000;
         box-shadow: 0 1rem 2rem rgba($color-black,.1);
         cursor: pointer;
+        
+        @include respond (tab-port) {
+           top: 4rem; 
+           right: 4rem;
+
+        }
     }
 
     &__background {
@@ -30,7 +36,14 @@
          transition: all .8s ;
          
 
-        //  transform: scale(80);
+         
+        @include respond (tab-port) {
+            top: 4rem; 
+            right: 4rem;
+            
+         }
+
+       
 
     }
 

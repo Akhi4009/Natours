@@ -3,9 +3,17 @@
     padding: 10rem 0;
     font-size: 1.4rem;
 
+    @include respond(tab-port){
+        padding: 8rem 0;
+    }
+
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(tab-port) {
+           margin-bottom: 6rem;
+        }
     }
 
     &__list {
@@ -23,6 +31,11 @@
         border-top: 1px solid $color-dark-gray;
         padding-top: 2rem;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
 
@@ -47,8 +60,16 @@
     &__copyright {
         color: $color-gray-light-1;
         border-top: 1px solid $color-dark-gray;
-       
         float: right;
+        padding: 2rem 0;
+        width: 80%;
+    
+    @include respond(tab-port) {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
     }
 
 }
