@@ -5,7 +5,15 @@
     
     &:not(:last-child){
         margin-bottom: $gap-row;
+
+        @include respond(tab-port) {
+            margin-bottom: $gap-row-small;
+        }
     }
+
+@include respond(tab-port) {
+     max-width: 50rem
+}
 
 //use clear for float
 
@@ -19,8 +27,22 @@
 
         &:not(:last-child) {
             margin-right: $gap-col;
-           }
+
+         @include respond(tab-port) {
+            margin-right: 0;
+            margin-bottom: $gap-row;
+
+        }
+
     }
+
+    @include respond(tab-port) {
+        width: 100% !important;
+    }
+    
+    }
+
+   
 
     .col-1-of-2{
        width: calc((100% - #{$gap-col})/2); 
@@ -50,4 +72,4 @@
   
 
 
-    }
+ }
