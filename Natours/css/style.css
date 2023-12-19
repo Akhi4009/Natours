@@ -556,6 +556,10 @@ body {
   width: 49%;
   display: inline-block;
   position: relative; }
+  @media (max-width: 56.25em) {
+    .form__radio {
+      width: 100%;
+      margin-bottom: 2rem; } }
   .form__radio-input {
     display: none; }
   .form__radio-label {
@@ -848,6 +852,19 @@ body {
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%), url(../img/nat-10.jpg); } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        width: 100%; } }
